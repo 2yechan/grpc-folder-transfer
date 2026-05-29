@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package folder;
+
+option go_package = "folder-transfer/shared";
+
+message FileChunk {
+  string file_path = 1;
+  bytes content = 2;
+  bool is_last = 3;
+  int64 file_size = 4;
+  int32 chunk_index = 5;
+}
+
+message UploadResponse {
+  bool success = 1;
+  string message = 2;
+  int32 files_count = 3;
+  int64 total_bytes = 4;
+}
+
+message DownloadRequest {
+  string folder_path = 1;
+}
+
+message TransferStatus {
+  string current_file = 1;
+  int32 progress = 2;
+}
+
+service FolderTransfer {
+  rpc UploadFolder(stream FileChunk) returns (UploadResponse);
+  rpc DownloadFolder(DownloadRequest) returns (stream FileChunk);
+}

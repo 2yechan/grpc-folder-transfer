@@ -1,0 +1,47 @@
+2026/05/29 10:39:13 gRPC 서버 시작: :50051 (업로드→/tmp/grpc-upload, 다운로드←/tmp/grpc-download)
+2026/05/29 10:41:13 gRPC 서버 시작: :50051 (업로드→/tmp/grpc-upload, 다운로드←/tmp/grpc-download)
+2026/05/29 10:42:52 [Upload] 파일 수신 시작: grpc-demo/bin/client (크기: 15069316 bytes)
+2026/05/29 10:42:52 [Upload] 파일 수신 시작: grpc-demo/bin/client.exe (크기: 15453696 bytes)
+2026/05/29 10:42:52 [Upload] 파일 수신 시작: grpc-demo/client/main.go (크기: 1326 bytes)
+2026/05/29 10:42:52 [Upload] 파일 수신 시작: grpc-demo/go.mod (크기: 328 bytes)
+2026/05/29 10:42:52 [Upload] 파일 수신 시작: grpc-demo/go.sum (크기: 3297 bytes)
+2026/05/29 10:42:52 [Upload] 파일 수신 시작: grpc-demo/hello/hello.pb.go (크기: 5384 bytes)
+2026/05/29 10:42:52 [Upload] 파일 수신 시작: grpc-demo/hello/hello_grpc.pb.go (크기: 4223 bytes)
+2026/05/29 10:42:52 [Upload] 파일 수신 시작: grpc-demo/proto/hello.proto (크기: 271 bytes)
+2026/05/29 10:42:52 업로드 완료: 8개 파일, 29.12 MB
+2026/05/29 10:43:55 [Download] 요청 폴더: /tmp/grpc-download/testfolder
+2026/05/29 10:44:17 [Download] 요청 폴더: /tmp/grpc-download/grpc-demo
+2026/05/29 10:44:45 [Download] 요청 폴더: /tmp/grpc-download/grpc-demo
+2026/05/29 10:44:45 [Download] 전송 시작: grpc-demo/bin/client
+2026/05/29 10:44:45 [Download] 전송 완료: grpc-demo/bin/client
+2026/05/29 10:44:45 [Download] 전송 시작: grpc-demo/bin/client.exe
+2026/05/29 10:44:45 [Download] 전송 완료: grpc-demo/bin/client.exe
+2026/05/29 10:44:45 [Download] 전송 시작: grpc-demo/client/main.go
+2026/05/29 10:44:45 [Download] 전송 완료: grpc-demo/client/main.go
+2026/05/29 10:44:45 [Download] 전송 시작: grpc-demo/go.mod
+2026/05/29 10:44:45 [Download] 전송 완료: grpc-demo/go.mod
+2026/05/29 10:44:45 [Download] 전송 시작: grpc-demo/go.sum
+2026/05/29 10:44:45 [Download] 전송 완료: grpc-demo/go.sum
+2026/05/29 10:44:45 [Download] 전송 시작: grpc-demo/hello/hello.pb.go
+2026/05/29 10:44:45 [Download] 전송 완료: grpc-demo/hello/hello.pb.go
+2026/05/29 10:44:45 [Download] 전송 시작: grpc-demo/hello/hello_grpc.pb.go
+2026/05/29 10:44:45 [Download] 전송 완료: grpc-demo/hello/hello_grpc.pb.go
+2026/05/29 10:44:45 [Download] 전송 시작: grpc-demo/proto/hello.proto
+2026/05/29 10:44:45 [Download] 전송 완료: grpc-demo/proto/hello.proto
+2026/05/29 10:46:37 [Download] 요청 폴더: /tmp/grpc-download/grpc-demo
+2026/05/29 10:46:37 [Download] 전송 시작: grpc-demo/bin/client
+2026/05/29 10:46:37 [Download] 전송 완료: grpc-demo/bin/client
+2026/05/29 10:46:37 [Download] 전송 시작: grpc-demo/bin/client.exe
+2026/05/29 10:46:37 [Download] 전송 완료: grpc-demo/bin/client.exe
+2026/05/29 10:46:37 [Download] 전송 시작: grpc-demo/client/main.go
+2026/05/29 10:46:37 [Download] 전송 완료: grpc-demo/client/main.go
+2026/05/29 10:46:37 [Download] 전송 시작: grpc-demo/go.mod
+2026/05/29 10:46:37 [Download] 전송 완료: grpc-demo/go.mod
+2026/05/29 10:46:37 [Download] 전송 시작: grpc-demo/go.sum
+2026/05/29 10:46:37 [Download] 전송 완료: grpc-demo/go.sum
+2026/05/29 10:46:37 [Download] 전송 시작: grpc-demo/hello/hello.pb.go
+2026/05/29 10:46:37 [Download] 전송 완료: grpc-demo/hello/hello.pb.go
+2026/05/29 10:46:37 [Download] 전송 시작: grpc-demo/hello/hello_grpc.pb.go
+2026/05/29 10:46:37 [Download] 전송 완료: grpc-demo/hello/hello_grpc.pb.go
+2026/05/29 10:46:37 [Download] 전송 시작: grpc-demo/proto/hello.proto
+2026/05/29 10:46:37 [Download] 전송 완료: grpc-demo/proto/hello.proto
