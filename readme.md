@@ -11,6 +11,26 @@ Go + gRPC로 구현한 폴더 업로드/다운로드 전송 도구.
 ```
 bin/grpc-server
 bin/grpc-client
+bin/grpc-win-client.exe
+```
+
+---
+
+## 빌드 방법
+
+**서버**
+```bash
+go build -o bin/grpc-server ./server/
+```
+
+**클라이언트(Linux)**
+```bash
+go build -o bin/grpc-client ./client/
+```
+
+**클라이언트(Windows)**
+```bash
+go build -o bin/grpc-win-client.exe ./client/
 ```
 
 ---
