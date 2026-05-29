@@ -30,7 +30,7 @@ go build -o bin/grpc-client ./client/
 
 **클라이언트(Windows)**
 ```bash
-go build -o bin/grpc-win-client.exe ./client/
+GOOS=windows GOARCH=amd64 go build -o bin/grpc-win-client.exe ./client/
 ```
 
 ---
