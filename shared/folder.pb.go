@@ -25,9 +25,7 @@ type FileChunk struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	FilePath      string                 `protobuf:"bytes,1,opt,name=file_path,json=filePath,proto3" json:"file_path,omitempty"`
 	Content       []byte                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
-	IsLast        bool                   `protobuf:"varint,3,opt,name=is_last,json=isLast,proto3" json:"is_last,omitempty"`
 	FileSize      int64                  `protobuf:"varint,4,opt,name=file_size,json=fileSize,proto3" json:"file_size,omitempty"`
-	ChunkIndex    int32                  `protobuf:"varint,5,opt,name=chunk_index,json=chunkIndex,proto3" json:"chunk_index,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -76,23 +74,9 @@ func (x *FileChunk) GetContent() []byte {
 	return nil
 }
 
-func (x *FileChunk) GetIsLast() bool {
-	if x != nil {
-		return x.IsLast
-	}
-	return false
-}
-
 func (x *FileChunk) GetFileSize() int64 {
 	if x != nil {
 		return x.FileSize
-	}
-	return 0
-}
-
-func (x *FileChunk) GetChunkIndex() int32 {
-	if x != nil {
-		return x.ChunkIndex
 	}
 	return 0
 }
@@ -209,70 +193,15 @@ func (x *DownloadRequest) GetFolderPath() string {
 	return ""
 }
 
-type TransferStatus struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	CurrentFile   string                 `protobuf:"bytes,1,opt,name=current_file,json=currentFile,proto3" json:"current_file,omitempty"`
-	Progress      int32                  `protobuf:"varint,2,opt,name=progress,proto3" json:"progress,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TransferStatus) Reset() {
-	*x = TransferStatus{}
-	mi := &file_proto_folder_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TransferStatus) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TransferStatus) ProtoMessage() {}
-
-func (x *TransferStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_folder_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TransferStatus.ProtoReflect.Descriptor instead.
-func (*TransferStatus) Descriptor() ([]byte, []int) {
-	return file_proto_folder_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *TransferStatus) GetCurrentFile() string {
-	if x != nil {
-		return x.CurrentFile
-	}
-	return ""
-}
-
-func (x *TransferStatus) GetProgress() int32 {
-	if x != nil {
-		return x.Progress
-	}
-	return 0
-}
-
 var File_proto_folder_proto protoreflect.FileDescriptor
 
 const file_proto_folder_proto_rawDesc = "" +
 	"\n" +
-	"\x12proto/folder.proto\x12\x06folder\"\x99\x01\n" +
+	"\x12proto/folder.proto\x12\x06folder\"k\n" +
 	"\tFileChunk\x12\x1b\n" +
 	"\tfile_path\x18\x01 \x01(\tR\bfilePath\x12\x18\n" +
-	"\acontent\x18\x02 \x01(\fR\acontent\x12\x17\n" +
-	"\ais_last\x18\x03 \x01(\bR\x06isLast\x12\x1b\n" +
-	"\tfile_size\x18\x04 \x01(\x03R\bfileSize\x12\x1f\n" +
-	"\vchunk_index\x18\x05 \x01(\x05R\n" +
-	"chunkIndex\"\x86\x01\n" +
+	"\acontent\x18\x02 \x01(\fR\acontent\x12\x1b\n" +
+	"\tfile_size\x18\x04 \x01(\x03R\bfileSizeJ\x04\b\x03\x10\x04J\x04\b\x05\x10\x06\"\x86\x01\n" +
 	"\x0eUploadResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12\x1f\n" +
@@ -282,10 +211,7 @@ const file_proto_folder_proto_rawDesc = "" +
 	"totalBytes\"2\n" +
 	"\x0fDownloadRequest\x12\x1f\n" +
 	"\vfolder_path\x18\x01 \x01(\tR\n" +
-	"folderPath\"O\n" +
-	"\x0eTransferStatus\x12!\n" +
-	"\fcurrent_file\x18\x01 \x01(\tR\vcurrentFile\x12\x1a\n" +
-	"\bprogress\x18\x02 \x01(\x05R\bprogress2\x8d\x01\n" +
+	"folderPath2\x8d\x01\n" +
 	"\x0eFolderTransfer\x12;\n" +
 	"\fUploadFolder\x12\x11.folder.FileChunk\x1a\x16.folder.UploadResponse(\x01\x12>\n" +
 	"\x0eDownloadFolder\x12\x17.folder.DownloadRequest\x1a\x11.folder.FileChunk0\x01B\x18Z\x16folder-transfer/sharedb\x06proto3"
@@ -302,12 +228,11 @@ func file_proto_folder_proto_rawDescGZIP() []byte {
 	return file_proto_folder_proto_rawDescData
 }
 
-var file_proto_folder_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_proto_folder_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_proto_folder_proto_goTypes = []any{
 	(*FileChunk)(nil),       // 0: folder.FileChunk
 	(*UploadResponse)(nil),  // 1: folder.UploadResponse
 	(*DownloadRequest)(nil), // 2: folder.DownloadRequest
-	(*TransferStatus)(nil),  // 3: folder.TransferStatus
 }
 var file_proto_folder_proto_depIdxs = []int32{
 	0, // 0: folder.FolderTransfer.UploadFolder:input_type -> folder.FileChunk
@@ -332,7 +257,7 @@ func file_proto_folder_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_folder_proto_rawDesc), len(file_proto_folder_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

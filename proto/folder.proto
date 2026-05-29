@@ -7,9 +7,8 @@ option go_package = "folder-transfer/shared";
 message FileChunk {
   string file_path = 1;
   bytes content = 2;
-  bool is_last = 3;
   int64 file_size = 4;
-  int32 chunk_index = 5;
+  reserved 3, 5; // (구) is_last, chunk_index — 스트림 순서 보장으로 불필요하여 제거
 }
 
 message UploadResponse {
@@ -21,11 +20,6 @@ message UploadResponse {
 
 message DownloadRequest {
   string folder_path = 1;
-}
-
-message TransferStatus {
-  string current_file = 1;
-  int32 progress = 2;
 }
 
 service FolderTransfer {
